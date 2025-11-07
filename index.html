@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Maker | 未来をつくる技術者診断</title>
+    <meta name="description" content="日本の技術が求められる仕事を、診断30問であぶり出す。資格じゃない。腕と責任感で食っていく時代へ。">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231B5E9E' width='100' height='100'/><text x='50' y='60' font-size='40' fill='white' text-anchor='middle' font-weight='bold'>JM</text></svg>">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Block 1: Headline AI後の仕事生存 -->
+    <section class="block-1 section" id="top">
+        <div class="container">
+            <h1>AI時代でも消えない<br>『手で稼ぐ力』<br class="br-sp">を持っているか？</h1>
+            <p class="subtitle">日本の技術が求められる仕事を、<br>診断30問であぶり出す。</p>
+            <div class="visual">
+                <svg class="infrastructure-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="10" y="40" width="15" height="50" fill="#1B5E9E"/>
+                    <rect x="30" y="30" width="15" height="60" fill="#1B5E9E"/>
+                    <rect x="50" y="20" width="15" height="70" fill="#1B5E9E"/>
+                    <rect x="70" y="35" width="15" height="55" fill="#1B5E9E"/>
+                    <circle cx="17.5" cy="30" r="5" fill="#FFD700"/>
+                    <circle cx="37.5" cy="20" r="5" fill="#FFD700"/>
+                    <circle cx="57.5" cy="10" r="5" fill="#FFD700"/>
+                    <circle cx="77.5" cy="25" r="5" fill="#FFD700"/>
+                </svg>
+                <svg class="infrastructure-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 20 80 L 20 40 L 40 20 L 60 20 L 80 40 L 80 80 Z" fill="none" stroke="#1B5E9E" stroke-width="3"/>
+                    <rect x="35" y="50" width="15" height="30" fill="#1B5E9E"/>
+                    <rect x="55" y="35" width="15" height="20" fill="#FFD700"/>
+                </svg>
+                <svg class="infrastructure-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#1B5E9E" stroke-width="3"/>
+                    <line x1="50" y1="20" x2="50" y2="50" stroke="#1B5E9E" stroke-width="3"/>
+                    <line x1="50" y1="50" x2="70" y2="50" stroke="#FFD700" stroke-width="3"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 2: Sub Message -->
+    <section class="block-2 section">
+        <div class="container">
+            <p class="message">資格じゃない。<br>『腕と責任感』で食っていく時代へ。</p>
+        </div>
+    </section>
+
+    <!-- Block 3: Lead Copy -->
+    <section class="block-3 section">
+        <div class="container">
+            <div class="content">
+                <p>日本は今、<br>
+                技術者が足りていない国になっている。</p>
+                <br>
+                <p>水。建物。電力。環境。安全。</p>
+                <br>
+                <p>誰かが必ずやらなければ、<br>
+                社会が止まる仕事。</p>
+                <br>
+                <p>なのに日本では、<br>
+                その仕事を選ぶ若者が減っている。</p>
+                <br>
+                <p>代わりに増えているのは</p>
+                <ul style="list-style-position: inside; margin: 20px 0;">
+                    <li>SNSインフルエンサー</li>
+                    <li>副業ノマド</li>
+                    <li>企業依存型リモートワーカー</li>
+                </ul>
+                <p>消えやすい仕事の方だ。</p>
+            </div>
+
+                <div class="highlight">
+                    <p style="font-weight: 700; font-size: 20px;">でも、あなたの中には<br>まだ眠っているかもしれない。</p>
+                    <p style="margin-top: 15px; font-size: 18px;">AIでは絶対に代替できない<br>『生きる力』が。</p>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- Block 4: First CTA 30問診断ボタン -->
+    <section class="block-4 section">
+        <div class="container">
+            <div class="cta-container">
+                <button class="cta-button" onclick="location.href='#diagnosis'">10分で未来を決める ─ 無料診断へ</button>
+                <p class="cta-note">※診断完全無料 / ※個人情報は厳守</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 5: Job Loss Data 職の喪失データ -->
+    <section class="block-5 section">
+        <div class="container">
+            <div class="content">
+                <h2>AIが奪う仕事<br class="br-sp"> vs 残る仕事</h2>
+                <p class="subtitle">経済産業省・厚労省の最新調査から</p>
+                
+                <div class="chart-container">
+                    <h3 class="chart-title">5年以内に失業リスク高い職種</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3 class="chart-title">2030年に需要が伸びる職種</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+
+                <p class="citation">出典：経済産業省『2030年の産業別人口動態予測』/ 厚労省『職業キャリア調査』</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 6: Social Needs 日本の技術者不足 -->
+    <section class="block-6 section">
+        <div class="container">
+            <div class="content">
+                <h2>日本が『今』本当に<br class="br-sp">困っていること</h2>
+                <p class="subtitle">次の10年で加速する3つの課題</p>
+                
+                <div class="cards-3col">
+                    <div class="card">
+                        <svg class="card-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 30 80 Q 30 60 50 60 Q 70 60 70 80" fill="none" stroke="#1B5E9E" stroke-width="4"/>
+                            <circle cx="50" cy="40" r="15" fill="#1B5E9E" opacity="0.3"/>
+                            <path d="M 45 35 Q 50 30 55 35" fill="none" stroke="#1B5E9E" stroke-width="3"/>
+                        </svg>
+                        <h3 class="card-title">インフラ老朽化</h3>
+                        <p class="card-text">日本の水道管の44%が、設置後40年以上。電力網も同じ。交換・保全には、今後30年で 270万人の技術者が必要です。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <svg class="card-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="30" cy="30" r="20" fill="#FFD700" opacity="0.5"/>
+                            <path d="M 60 40 L 70 30 L 75 35 L 65 50 L 70 55 L 60 65 L 55 60 L 60 50 L 50 45 Z" fill="#1B5E9E"/>
+                            <rect x="10" y="70" width="80" height="5" fill="#4CAF50"/>
+                        </svg>
+                        <h3 class="card-title">エネルギー転換</h3>
+                        <p class="card-text">2030年までに、再生可能エネルギーは現在の3倍以上に増加します。ソーラー施工、蓄電池管理、地熱調査の現場スタッフが緊急不足。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <svg class="card-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 30 70 L 30 40 L 45 30 L 45 60" fill="none" stroke="#1B5E9E" stroke-width="4"/>
+                            <circle cx="30" cy="35" r="5" fill="#1B5E9E"/>
+                            <path d="M 55 50 L 70 40 L 85 50" fill="none" stroke="#FFD700" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3 class="card-title">技術承継の限界</h3>
+                        <p class="card-text">現在の職人世代は、平均年齢62歳。5～10年で大量退職が始まります。日本の『手』を守れるか、その時間は、もう残っていない。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 7: 5 Categories 5分類の簡易説明 -->
+    <!-- Block 7: あなたの『道』は、この5つのBuilder系統のどれか -->
+    <section id="block-7" class="block-7">
+        <div class="container">
+            <div class="c-header">
+                <h2>あなたの『適正』は、どれか？</h2>
+                <p>診断後に、詳細ロードマップと<br class="br-sp">協働AIが提示されます。</p>
+            </div>
+        </div>
+        
+            <div class="builder-cards">
+                <!-- Builder 01: Structure Builder -->
+                <div class="builder-card builder-1">
+                    <div class="builder-badge">Builder 01</div>
+                    <h3 class="builder-name-en">Structure Builder</h3>
+                    <p class="builder-name-ja">構造防衛・都市防災</p>
+
+                    <div class="builder-info">
+                        <div class="info-section">
+                            <label>役割</label>
+                            <p>耐震・耐風・耐水の命の防壁構築</p>
+                        </div>
+                        <div class="info-section">
+                            <label>主戦場</label>
+                            <p>災害多発地域、山・水際</p>
+                        </div>
+                        <div class="info-section">
+                            <label>協働AI</label>
+                            <p>シミュレーションAI<br>（揺れ／流れ／劣化予測）</p>
+                        </div>
+                        <div class="mission">
+                            <p>人を「死なせない」</p>
+                        </div>
+                    </div>
+
+                    <div class="salary-stats">
+                        <p class="salary">年収 690万円</p>
+                        <p class="rating">日本で最高の防災需要</p>
+                    </div>
+                </div>
+
+                <!-- Builder 02: Habitat Builder -->
+                <div class="builder-card builder-2">
+                    <div class="builder-badge">Builder 02</div>
+                    <h3 class="builder-name-en">Habitat Builder</h3>
+                    <p class="builder-name-ja">生態回復・水循環</p>
+
+                    <div class="builder-info">
+                        <div class="info-section">
+                            <label>役割</label>
+                            <p>水・土壌・植生の生命基盤設計</p>
+                        </div>
+                        <div class="info-section">
+                            <label>主戦場</label>
+                            <p>放棄地、荒廃地、山林、海辺</p>
+                        </div>
+                        <div class="info-section">
+                            <label>協働AI</label>
+                            <p>環境センシングAI<br>（気温・水質・微生物）</p>
+                        </div>
+                        <div class="mission">
+                            <p>地球を「呼吸させる」</p>
+                        </div>
+                    </div>
+
+                    <div class="salary-stats">
+                        <p class="salary">年収 620万円</p>
+                        <p class="rating">SDGs最前線、年収上昇中</p>
+                    </div>
+                </div>
+
+                <!-- Builder 03: Product Builder -->
+                <div class="builder-card builder-3">
+                    <div class="builder-badge">Builder 03</div>
+                    <h3 class="builder-name-en">Product Builder</h3>
+                    <p class="builder-name-ja">道具・家財</p>
+
+                    <div class="builder-info">
+                        <div class="info-section">
+                            <label>役割</label>
+                            <p>毎日触れる生活クオリティの源をつくる</p>
+                        </div>
+                        <div class="info-section">
+                            <label>主戦場</label>
+                            <p>工房、地場産業、輸出市場</p>
+                        </div>
+                        <div class="info-section">
+                            <label>協働AI</label>
+                            <p>製造最適化AI<br>（カット、3D、強度設計）</p>
+                        </div>
+                        <div class="mission">
+                            <p>暮らしを「豊かにする」</p>
+                        </div>
+                    </div>
+
+                    <div class="salary-stats">
+                        <p class="salary">年収 660万円</p>
+                        <p class="rating">日本の得意領域、輸出増加</p>
+                    </div>
+                </div>
+
+                <!-- Builder 04: System Builder -->
+                <div class="builder-card builder-4">
+                    <div class="builder-badge">Builder 04</div>
+                    <h3 class="builder-name-en">System Builder</h3>
+                    <p class="builder-name-ja">社会設計・物流</p>
+
+                    <div class="builder-info">
+                        <div class="info-section">
+                            <label>役割</label>
+                            <p>インフラ × 経済 × 法の運用システム構築</p>
+                        </div>
+                        <div class="info-section">
+                            <label>主戦場</label>
+                            <p>都市、国境、コミュニティ組織</p>
+                        </div>
+                        <div class="info-section">
+                            <label>協働AI</label>
+                            <p>データ統合AI<br>（交通／配電／市場）</p>
+                        </div>
+                        <div class="mission">
+                            <p>文明を「回す」</p>
+                        </div>
+                    </div>
+
+                    <div class="salary-stats">
+                        <p class="salary">年収 780万円</p>
+                        <p class="rating">経験で年収300万増も</p>
+                    </div>
+                </div>
+
+                <!-- Builder 05: Sanctuary Builder -->
+                <div class="builder-card builder-5">
+                    <div class="builder-badge">Builder 05</div>
+                    <h3 class="builder-name-en">Sanctuary Builder</h3>
+                    <p class="builder-name-ja">空間心理・場の治癒</p>
+
+                    <div class="builder-info">
+                        <div class="info-section">
+                            <label>役割</label>
+                            <p>共同体の心の安全基地を創る</p>
+                        </div>
+                        <div class="info-section">
+                            <label>主戦場</label>
+                            <p>住宅、教育、医療、寺院</p>
+                        </div>
+                        <div class="info-section">
+                            <label>協働AI</label>
+                            <p>光・音・心理フィード最適化AI</p>
+                        </div>
+                        <div class="mission">
+                            <p>人を「壊さない」</p>
+                        </div>
+                    </div>
+
+                    <div class="salary-stats">
+                        <p class="salary">年収 640万円</p>
+                        <p class="rating">女性・シニア活躍領域</p>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Block 8: Salary Benchmark 技術者の年収ベンチ -->
+    <section class="block-8 section">
+        <div class="container">
+            <div class="content">
+                <h2>『手に職』は、<br class="br-sp">給与に直結する</h2>
+                <p class="subtitle">年功序列ではなく、スキル序列の世界</p>
+                
+                <div class="chart-container chart-breakout">
+
+                    <div class="salary-graph">
+                   <canvas id="salaryChart"></canvas>
+                     </div>
+
+                </div>
+
+                <table class="salary-table">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>一般企業員</th>
+                            <th>技術者</th>
+                            <th>差</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>平均年収</td>
+                            <td>480万円</td>
+                            <td>680万円</td>
+                            <td class="diff-positive">+200万円</td>
+                        </tr>
+                        <tr>
+                            <td>安定性</td>
+                            <td>中（リストラリスク）</td>
+                            <td>高（スキル型）</td>
+                            <td class="diff-positive">◯</td>
+                        </tr>
+                        <tr>
+                            <td>転職可能性</td>
+                            <td>低</td>
+                            <td>高</td>
+                            <td class="diff-positive">◯</td>
+                        </tr>
+                        <tr>
+                            <td>年金上乗せ</td>
+                            <td>なし</td>
+                            <td>あり（企業多）</td>
+                            <td class="diff-positive">◯</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Block 9: Family Stability 家族の生活安定をアピール -->
+    <section class="block-9 section">
+        <div class="container">
+            <p class="message">給料日が来ない不安から、<br>解放される。</p>
+            <p class="subtitle">家族が、あなたの<br class="br-sp">『手』を信頼する。</p>
+            <div class="visual">
+                <svg width="200" height="150" viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 60 100 L 60 60 L 80 40 L 120 40 L 140 60 L 140 100 Z" fill="none" stroke="white" stroke-width="3" opacity="0.7"/>
+                    <rect x="85" y="70" width="30" height="30" fill="white" opacity="0.5"/>
+                    <circle cx="50" cy="80" r="15" fill="white" opacity="0.6"/>
+                    <circle cx="30" cy="95" r="10" fill="white" opacity="0.6"/>
+                    <line x1="45" y1="95" x2="30" y2="110" stroke="white" stroke-width="2" opacity="0.6"/>
+                    <line x1="35" y1="95" x2="20" y2="110" stroke="white" stroke-width="2" opacity="0.6"/>
+                </svg>
+            </div>
+            <p class="tagline">安定とは、スキルに宿る。</p>
+        </div>
+    </section>
+
+
+    <!-- Block 10: Testimonials 体験者の未来系コメント -->
+<section class="block-10 section">
+    <div class="container">
+        <div class="c-header">
+            <h2>Builder の道を<br class="br-sp">選んだ男たちの、今</h2>
+            <p class="subtitle">診断を受けて、人生が動いた。</p>
+        </div>
+    </div>
+        <div class="testimonials-grid">
+
+            <!-- Testimonial 1: Structure Builder パス -->
+            <div class="testimonial-card testimonial-structure">
+                <div class="testimonial-header">
+                    <div class="testimonial-badge">Structure Builder</div>
+                    <div class="testimonial-timeline">診断後、2年で実現</div>
+                </div>
+
+                <div class="testimonial-career">
+                    <p class="from">溶接工</p>
+                    <div class="arrow">→</div>
+                    <p class="to">現場リーダー</p>
+                </div>
+
+                <div class="testimonial-mission">
+                    <strong>「社会の防壁」を自分の手で守る</strong>
+                </div>
+
+                <p class="testimonial-quote">
+                    「耐震診断の現場で、建物の弱点を見つける喜びが感じられるようになった。妻にも子どもにも、『お父さんの仕事は、みんなの命を守ってる』って伝えられるようになった。給料が250万上がったのも、やっぱり責任が大きいからなんだと思う。」
+                </p>
+
+                <div class="testimonial-profile">
+                    <p><strong>田中 健一さん</strong></p>
+                    <p class="age">35歳 | 既婚・子2人</p>
+                    <p class="field">構造防衛（耐震・防災）分野で活躍中</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 2: Product Builder パス -->
+            <div class="testimonial-card testimonial-product">
+                <div class="testimonial-header">
+                    <div class="testimonial-badge">Product Builder</div>
+                    <div class="testimonial-timeline">診断後、1年で転職</div>
+                </div>
+
+                <div class="testimonial-career">
+                    <p class="from">工場勤務</p>
+                    <div class="arrow">→</div>
+                    <p class="to">品質管理職人</p>
+                </div>
+
+                <div class="testimonial-mission">
+                    <strong>「毎日の質感」を、自分が決める</strong>
+                </div>
+
+                <p class="testimonial-quote">
+                    「品質管理に異動してから、自分の判断で製品が変わることの重みが分かった。毎日、工房の職人たちと『もっといいものをつくる』って話し合える。年収が200万上がって、朝も気持ちよく起きられるようになった。診断がなかったら、ずっと流れ作業の人生だったと思う。」
+                </p>
+
+                <div class="testimonial-profile">
+                    <p><strong>佐藤 太郎さん</strong></p>
+                    <p class="age">42歳 | 既婚</p>
+                    <p class="field">道具・家財（精密ものづくり）分野で活躍中</p>
+                </div>
+            </div>
+
+            <!-- Testimonial 3: System Builder パス -->
+            <div class="testimonial-card testimonial-system">
+                <div class="testimonial-header">
+                    <div class="testimonial-badge">System Builder</div>
+                    <div class="testimonial-timeline">診断後、3年で実現</div>
+                </div>
+
+                <div class="testimonial-career">
+                    <p class="from">大工</p>
+                    <div class="arrow">→</div>
+                    <p class="to">施工マネジメント</p>
+                </div>
+
+                <div class="testimonial-mission">
+                    <strong>「社会が回る」仕組みをつくる</strong>
+                </div>
+
+                <p class="testimonial-quote">
+                    「大工から管理職になって、資格の勉強が『自分への投資』に見えるようになった。現場のシステムを自分で設計して、それが市場全体で回っていく。給料も280万増えて、ローン不安がなくなった。親にも『お前、本当に頑張ってるな』って言われた時は、人生が変わった実感があった。」
+                </p>
+
+                <div class="testimonial-profile">
+                    <p><strong>鈴木 拓也さん</strong></p>
+                    <p class="age">39歳 | 既婚・子1人</p>
+                    <p class="field">社会設計・物流（施工マネジメント）分野で活躍中</p>
+                </div>
+            </div>
+        </div>
+
+</section>
+
+
+
+    <!-- Block 11: Second CTA -->
+    <section class="block-11 section">
+        <div class="container">
+            <div class="content">
+                <h2>次のステップは、<br class="br-sp">自分の適性を知ること</h2>
+                <p class="ps-copy">技術者は、<br class="br-sp">AI時代の最後の『安定職』です。
+
+もしあなたが、
+手を動かすのが好きで
+誰かの生活を守りたいなら。
+
+日本がこれから必要とするのは
+あなたです。
+
+まずは、どの道が最短か
+10分で見つけましょう。</p>
+            </div>
+
+<div class="cta-container">
+                <button class="cta-button" onclick="location.href='#diagnosis'">10分で未来を決める ─ 無料診断へ</button>
+                <p class="cta-note">※診断完全無料 / ※個人情報厳守 / ※結果は即座に表示</p>
+</div>
+
+
+        </div>
+    </section>
+
+    <!-- Block 12: About Japan Maker -->
+    <section class="block-12 section">
+        <div class="container">
+            <div class="content">
+                <h2>Japan Maker について</h2>
+                <p class="description">技術者のための学習 × キャリアコミュニティ。30年先も日本に必要とされる人を育成します。</p>
+                <ul class="features">
+                    <li>◆ オンライン講座（全国対応）</li>
+                    <li>◆ 多摩センター拠点（東京・対面研修）</li>
+                    <li>◆ 企業パートナーシップ（就職サポート）</li>
+                    <li>◆ 生涯学習システム（スキルアップ無制限）</li>
+                </ul>
+                <div class="logo">Japan Maker</div>
+                <p class="tagline">日本の『手』を、世界の『価値』に。</p>
+                <a href="#about" class="link">詳しく知る</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy">プライバシーポリシー</a>
+                <a href="#terms">利用規約</a>
+                <a href="#contact">お問い合わせ</a>
+                <a href="#company">企業情報</a>
+            </div>
+            <p class="footer-copyright">© 2025 Japan Maker. All rights reserved.</p>
+        </div>
+    </footer>
+
+ <!-- Japan Maker 診断LP  -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app-jm.js"></script>
+
+</body>
+</html>

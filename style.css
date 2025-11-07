@@ -1,0 +1,1470 @@
+/* Japan Maker LP Design */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1B5E9E;
+            --dark-blue: #0A3A66;
+            --light-blue: #E8F0F7;
+            --gray-light: #F5F5F5;
+            --gray-lighter: #FAFAFA;
+            --gray-dark: #2C3E50;
+            --green: #4CAF50;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-gray: #666666;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+           /* max-width: 1200px; */
+            margin: 0 auto;
+           /* padding: 0 20px; */
+            max-width: 900px;
+            padding: 0 40px;  ← ★修正: 0 20px → 0 40px に統一
+            width: 100%;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Block 1: Headline */
+        .block-1 {
+            text-align: center;
+            padding: 80px 40px;
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .block-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: var(--primary-blue);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+            opacity: 0.1;
+        }
+
+        .block-1 h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .block-1 .subtitle {
+            font-size: 32px;
+            line-height: 2.0;
+            margin-bottom: 40px;
+            color: var(--text-gray);
+        }
+
+        .block-1 .visual {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .infrastructure-icon {
+            width: 80px;
+            height: 80px;
+            filter: sepia(30%);
+        }
+
+        /* Block 2: Sub Message */
+        .block-2 {
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--white);
+        }
+
+.block-2 .content {
+    max-width: 900px;  
+    margin: 0 auto;     
+    padding: 0 40px;    
+    width: 100%;
+}
+
+        .block-2 .message {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 2.0;
+        }
+
+        /* Block 3: Lead Copy */
+        .block-3 {
+            /* padding: 60px 40px; */
+            padding: 60px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .block-3::before {
+            content: '';
+            position: absolute;
+            /* left: 40px; */
+            left: 0;
+            top: 10%;
+            width: 4px;
+            height: 80%;
+            background: var(--primary-blue);
+        }
+
+        .block-3 .content {
+            max-width: none;
+            /* max-width: 800px; */
+            text-align: left;
+            /* margin-left: 40px; */
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .block-3 .highlight {
+            background: var(--light-blue);
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        /* Block 4: First CTA */
+        .block-4 {
+            padding: 60px 40px 140px;
+            background: var(--white);
+        }
+
+         .cta-container {
+            /*max-width: 800px;*/
+            text-align: center;
+        }
+
+        .cta-button {
+            width: 100%;
+            max-width: 600px;
+            height: 80px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(27, 94, 158, 0.2);
+        }
+
+        .cta-button:hover {
+            background: var(--dark-blue);
+            box-shadow: 0 6px 20px rgba(27, 94, 158, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .cta-note {
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* Block 5: Job Loss Data */
+        .block-5 {
+            /* padding: 60px 40px; */
+            padding: 60px 0;
+            background: var(--gray-light);
+            margin-bottom: 60px;
+        }
+
+        .block-5 .content {
+            /* max-width: 900px; */
+            max-width: 100%;
+            width: 100%;
+            text-align: left;
+        }
+
+        .block-5 h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .block-5 .subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .chart-container {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            width: 100%;
+            min-height: 350px;
+        }
+
+        #salaryChart{
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 300px;
+        }
+
+        .citation {
+            font-size: 12px;
+            color: var(--text-gray);
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* Block 6: Social Needs */
+        .block-6 {
+            /* padding: 60px 40px; */
+            padding: 60px 0;
+            background: var(--white);
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .block-6::after {
+            content: '';
+            position: absolute;
+            /* right: 40px; */
+            right: 0;
+            top: 10%;
+            width: 4px;
+            height: 80%;
+            background: var(--primary-blue);
+        }
+
+        .block-6 .content {
+            max-width: 1100px;
+            text-align: left;
+        }
+
+        .block-6 h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .block-6 .subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .cards-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .card-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        /* Block 7: 5 Categories */
+        .block-7 {
+            /* padding: 60px 40px; */
+            padding: 60px 0;
+            background: var(--light-blue);
+            margin-bottom: 60px;
+        }
+
+        .block-7 .content {
+            max-width: 900px!important;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%
+            /* max-width: 1200px; */
+            text-align: left;
+        }
+
+        .block-7 h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1B5E9E;
+            text-align: left;
+        }
+
+        .block-7 .subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .cards-5col {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .category-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+        }
+
+        .category-desc {
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .category-salary {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .category-rating {
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .category-note {
+            font-size: 11px;
+            color: var(--text-gray);
+        }
+
+        /* Block 8: Salary Benchmark */
+        .block-8 {
+            padding: 60px 40px;
+            background: var(--white);
+            border-top: 4px solid var(--primary-blue);
+            margin-bottom: 60px;
+        }
+
+        .block-8 .content {
+            /* max-width: 1000px; */
+            max-width: 100%;
+            width: 100%;
+            text-align: left;
+        }
+
+        .block-8 h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .block-8 .subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .salary-table {
+            width: 100%;
+            margin-top: 40px;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .salary-table th,
+        .salary-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .salary-table th {
+            background: var(--light-blue);
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .salary-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .diff-positive {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* Block 9: Family Stability */
+        .block-9 {
+            text-align: center;
+            padding: 100px 40px;
+            background: var(--primary-blue);
+            color: var(--white);
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .block-9::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    rgba(255,255,255,0.03) 0px, 
+                    rgba(255,255,255,0.03) 2px, 
+                    transparent 2px, 
+                    transparent 10px),
+                repeating-linear-gradient(0deg, 
+                    rgba(255,255,255,0.03) 0px, 
+                    rgba(255,255,255,0.03) 2px, 
+                    transparent 2px, 
+                    transparent 10px);
+            pointer-events: none;
+        }
+
+        .block-9 .message {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 2.0;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .block-9 .subtitle {
+            font-size: 20px;
+            opacity: 0.7;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .block-9 .visual {
+            margin: 40px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .block-9 .tagline {
+            font-size: 16px;
+            opacity: 0.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Block 10: Testimonials */
+        .block-10 {
+            /* padding: 60px 40px; */
+            padding: 60px 0;
+            background: var(--gray-lighter);
+            margin-bottom: 60px;
+        }
+
+        .block-10 .content {
+            /* max-width: 1100px; */
+            max-width: none;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+            text-align: left;
+        }
+
+
+
+        .block-10 h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #1B5E9E;
+            text-align: left;
+        }
+
+        .block-10 .subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+        }
+
+        .testimonial-info {
+            flex-grow: 1;
+        }
+
+        .testimonial-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue);
+        }
+
+        .testimonial-badge {
+            display: inline-block;
+            background: var(--light-blue);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .testimonial-quote {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .testimonial-profile {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* Block 11: Second CTA */
+        .block-11 {
+            /* padding: 60px 40px; */
+            pading: 60px 0;
+            background: var(--white);
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .block-11::before {
+            content: '';
+            position: absolute;
+            /* left: 40px; */
+            left: 0;
+            top: 10%;
+            width: 4px;
+            height: 80%;
+            background: var(--primary-blue);
+        }
+
+        .block-11 .content {
+            /* max-width: 800px; */
+            max-width: none;
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        .block-11 h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .block-11 .ps-copy {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            white-space: pre-line;
+        }
+
+        /* Block 12: About Japan Maker */
+        .block-12 {
+            /* padding: 60px 40px; */
+            padding: 60px 0;
+            background: var(--light-blue);
+            margin-bottom: 40px;
+        }
+
+        .block-12 .content {
+            /* max-width: 900px; */
+            max-width: 100%;
+            width: 100%;
+            text-align: left;
+        }
+
+        .block-12 h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .block-12 .description {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .block-12 .features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .block-12 .features li {
+            font-size: 15px;
+            line-height: 2.0;
+            color: var(--text-dark);
+        }
+
+        .block-12 .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .block-12 .tagline {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .block-12 .link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid var(--primary-blue);
+            transition: opacity 0.3s ease;
+        }
+
+        .block-12 .link:hover {
+            opacity: 0.7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gray-dark);
+            color: var(--white);
+            padding: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1199px) {
+            .cards-5col {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .block-1 h1 {
+                font-size: 33.6px; /* 70% of 48px */
+            }
+
+            .block-1 .subtitle {
+                font-size: 22.4px; /* 70% of 32px */
+            }
+
+            .block-2 .message {
+                font-size: 16.8px; /* 70% of 24px */
+            }
+
+            .block-9 .message {
+                font-size: 21px; /* 70% of 40px */
+            }
+
+            .cards-3col {
+                grid-template-columns: 1fr;
+            }
+
+            .cards-5col {
+                grid-template-columns: 1fr;
+            }
+
+            .block-3::before,
+            .block-11::before {
+                left: 20px;
+            }
+
+            .block-3 .content,
+            .block-11 .content {
+                margin-left: 20px;
+            }
+
+            .block-6::after {
+                display: none;
+            }
+
+            .cta-button {
+                height: 70px;
+                font-size: 18px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .block-1,
+            .block-2,
+            .block-3,
+            .block-4,
+            .block-5,
+            .block-6,
+            .block-7,
+            .block-8,
+            .block-9,
+            .block-10,
+            .block-11,
+            .block-12 {
+                padding: 60px 0px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .br-sp {
+            display: none;
+        }
+
+/* Responsible Style */
+        @media (max-width: 768px) {
+            .br-sp {
+                display: inline;
+            }
+
+}
+
+
+
+
+        /* ============================================
+           Block 7 & 8: Builder System & Salary
+           ============================================ */
+
+        #block-7 {
+            background: #E8F0F7;
+            padding: 80px 40px;
+        }
+
+        #block-7 .c-header {
+            max-width: 900px!important;
+            margin-bottom: 60px;
+        }
+
+        #block-7 h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1B5E9E;
+            margin-bottom: 12px;
+        }
+
+        #block-7 .c-header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .builder-cards {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .builder-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #1B5E9E;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .builder-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .builder-1 { border-top-color: #1B5E9E; }
+        .builder-2 { border-top-color: #27AE60; }
+        .builder-3 { border-top-color: #E67E22; }
+        .builder-4 { border-top-color: #3498DB; }
+        .builder-5 { border-top-color: #8E44AD; }
+
+        .builder-badge {
+            font-size: 11px;
+            font-weight: bold;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .builder-name-en {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1B5E9E;
+            margin-bottom: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .builder-name-ja {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 16px;
+            font-weight: normal;
+            line-height: 1.4;
+        }
+
+        .builder-info {
+            flex: 1;
+            margin-bottom: 16px;
+        }
+
+        .info-section {
+            margin-bottom: 12px;
+            padding: 10px;
+            background: #F9F9F9;
+            border-left: 3px solid #E8F0F7;
+            border-radius: 3px;
+        }
+
+        .info-section label {
+            font-size: 11px;
+            font-weight: bold;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .info-section p {
+            font-size: 12px;
+            color: #333;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+/* ============================================
+     Block 10: Testimonials CSS
+     ============================================ -*/
+
+    .block-10 {
+        background: #FAFAFA;
+        padding: 80px 40px;
+    }
+
+    .block-10 .c-header {
+        margin-bottom: 60px;
+        text-align: left;
+    }
+
+    .block-10 h2 {
+        font-size: 28px;
+        font-weight: bold;
+        color: #1B5E9E;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+
+    .block-10 .subtitle {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+        width: 100%;
+    }
+
+    .testimonial-card {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid #1B5E9E;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonial-card:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+    }
+
+    /* Builder カラー別ボーダー */
+    .testimonial-structure { border-left-color: #1B5E9E; }
+    .testimonial-product { border-left-color: #E67E22; }
+    .testimonial-system { border-left-color: #3498DB; }
+
+    .testimonial-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+    }
+
+    .testimonial-badge {
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        background: #1B5E9E;
+        padding: 6px 12px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .testimonial-structure .testimonial-badge { background: #1B5E9E; }
+    .testimonial-product .testimonial-badge { background: #E67E22; }
+    .testimonial-system .testimonial-badge { background: #3498DB; }
+
+    .testimonial-timeline {
+        font-size: 11px;
+        color: #999;
+        font-weight: bold;
+        text-align: right;
+    }
+
+    .testimonial-career {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 16px 0 20px 0;
+        padding: 12px;
+        background: #F9F9F9;
+        border-radius: 4px;
+    }
+
+    .testimonial-career .from {
+        font-size: 14px;
+        color: #999;
+        margin: 0;
+    }
+
+    .testimonial-career .arrow {
+        color: #1B5E9E;
+        font-weight: bold;
+    }
+
+    .testimonial-career .to {
+        font-size: 14px;
+        font-weight: bold;
+        color: #1B5E9E;
+        margin: 0;
+    }
+
+    .testimonial-mission {
+        font-size: 13px;
+        color: #1B5E9E;
+        font-weight: bold;
+        margin-bottom: 16px;
+        padding: 12px;
+        background: rgba(27, 94, 158, 0.05);
+        border-radius: 4px;
+        text-align: center;
+    }
+
+    .testimonial-quote {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-style: italic;
+        flex: 1;
+    }
+
+    .testimonial-profile {
+        font-size: 12px;
+        color: #999;
+        line-height: 1.8;
+        border-top: 1px solid #eee;
+        padding-top: 12px;
+    }
+
+    .testimonial-profile p {
+        margin: 0;
+    }
+
+    .testimonial-profile strong {
+        color: #1B5E9E;
+    }
+
+    .age {
+        font-weight: bold;
+    }
+
+    .field {
+        font-style: italic;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 1200px) {
+        .testimonials-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .block-10 {
+            padding: 60px 20px;
+        }
+
+        .block-10 h2 {
+            font-size: 24px;
+        }
+
+    }
+
+    @media (max-width: 480px) {
+        .block-10 {
+            padding: 40px 16px;
+        }
+
+        .block-10 h2 {
+            font-size: 20px;
+        }
+
+        .testimonial-card {
+            padding: 20px;
+        }
+
+        .testimonial-quote {
+            font-size: 13px;
+        }
+    }
+
+
+
+
+    /* 既存 */
+
+        .mission {
+            margin: 12px 0;
+            padding: 12px;
+            background: linear-gradient(135deg, #E8F0F7 0%, #F0F5FA 100%);
+            border-left: 4px solid #1B5E9E;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .mission p {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1B5E9E;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .salary-stats {
+            margin-top: auto;
+        }
+
+        .salary {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1B5E9E;
+            margin-bottom: 4px;
+        }
+
+        .rating {
+            font-size: 11px;
+            color: #999;
+            margin: 0;
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        #block-8 {
+            background: white;
+            /* padding: 80px 40px; */
+            padding: 60px 0;
+            border-top: 4px solid #1B5E9E;
+        }
+
+        #block-8 .c-header {
+            margin-bottom: 60px;
+        }
+
+        #block-8 h2 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #1B5E9E;
+            margin-bottom: 12px;
+        }
+
+        #block-8 .c-header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .salary-comparison {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .salary-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .salary-table th {
+            background: #E8F0F7;
+            color: #1B5E9E;
+            padding: 14px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 2px solid #1B5E9E;
+            font-size: 13px;
+        }
+
+        .salary-table td {
+            padding: 14px;
+            border-bottom: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .salary-table tbody tr:hover {
+            background: #F9F9F9;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 1200px) {
+            .builder-cards {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .builder-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            #block-7,
+            #block-8 {
+                padding: 60px 20px;
+            }
+
+            #block-7 h2,
+            #block-8 h2 {
+                font-size: 24px;
+            }
+
+            .builder-name-en {
+                font-size: 13px;
+            }
+
+            .salary {
+                font-size: 13px;
+            }
+
+            .l-container {
+                padding: 60px 0!important;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .builder-cards {
+                grid-template-columns: 1fr;
+            }
+
+            #block-7,
+            #block-8 {
+                padding: 40px 16px;
+            }
+
+            #block-7 h2,
+            #block-8 h2 {
+                font-size: 20px;
+            }
+
+            .salary-table {
+                font-size: 12px;
+            }
+
+            .salary-table th,
+            .salary-table td {
+                padding: 10px;
+            }
+        }
+
+/* ========== タブレット用（768-1199px）========== */
+
+@media (max-width: 1199px) {
+    .chart-breakout {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        padding: 50px 30px;
+    }
+
+    .chart-container {
+        width: 100%;
+        min-height: 400px;
+        padding: 30px;
+        margin: 0 10px;
+    }
+
+    .salary-graph {
+        min-height: 350px;
+        padding: 15px;
+    }
+}
+
+
+/* ========== スマホ用（480-767px）========== */
+
+@media (max-width: 767px) {
+    .chart-breakout {
+        width: 100vw!important;
+        margin-left: calc(-50vw + 50%)!important;
+        margin-right: calc(-50vw + 50%)!important;
+        padding: 40px 15px!important;
+    }
+
+    .chart-container {
+        width: 100%;
+        min-height: 350px;
+        padding: 25px;
+        margin: 0 5px;
+        border-radius: 8px;
+    }
+
+    .salary-graph {
+        min-height: 320px;
+        padding: 15px;
+    }
+
+    #salaryChart {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .salary-table {
+        margin-top: 40px;
+        font-size: 13px;
+    }
+
+    .salary-table th,
+    .salary-table td {
+        padding: 10px;
+    }
+}
+
+
+/* ========== 超小型用（480px未満）========== */
+
+@media (max-width: 479px) {
+    .chart-breakout {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        padding: 30px 10px;
+    }
+
+    .chart-container {
+        width: 100%;
+        min-height: 300px;
+        padding: 20px;
+        margin: 0;
+        border-radius: 6px;
+    }
+
+    .salary-graph {
+        min-height: 280px;
+        padding: 10px;
+    }
+}
+
+
+        .salary-graph {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            min-height: 0;
+        }
+
+      /*  .salary-graph canvas {
+            max-height: 400px;
+        } */
+
+        .salary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+
+        .salary-table th {
+            background: #E8F0F7;
+            color: #1B5E9E;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+
+        .salary-table td {
+            padding: 12px;
+            border: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .salary-table tr:nth-child(even) {
+            background: #F9F9F9;
+        }
+
