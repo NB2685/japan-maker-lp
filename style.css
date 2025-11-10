@@ -888,7 +888,7 @@
         }
 
         .block-12 .features li {
-            font-size: 15px;
+            font-size: 14px;
             line-height: 2.0;
             color: var(--text-dark);
         }
@@ -901,7 +901,6 @@
         }
 
         .block-12 .tagline {
-            font-size: 18px;
             font-weight: 600;
             color: var(--text-dark);
             margin-bottom: 20px;
