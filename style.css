@@ -108,6 +108,11 @@
              z-index: -1;
              pointer-events: none;             
              filter: saturate(0.8) contrast(1.05); /* 彩度80%、コントラスト+5% */
+            /* iOSの描画安定化のための追加 */
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+           -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
 
 /* iOSでは::-webkit-background-attachment-x,yのバグがあるため、以下の条件付きCSSを追加 */
