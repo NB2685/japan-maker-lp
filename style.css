@@ -89,8 +89,9 @@
     padding: 100px 40px 80px;
     color: var(--white); /* 背景に合わせて文字色調整 */
     text-align: center;
-    /*overflow: hidden;
-    z-index: 1;*/
+    overflow: visible;
+    z-index: -1;
+    background: none;
 }
 
         .block-1::before {
@@ -98,6 +99,7 @@
             position: fixed!important;
             top: 0;
             left: 0;
+            right: auto;
             width: 100vw;
             height: 70vh;
              /*position: relative;*/
@@ -145,7 +147,7 @@
 
 
         .block-1 h1 {
-            font-size: 48px;
+            font-size: clamp(32px, 4vw, 48px);
             font-weight: 700;
             line-height: 1.8;
             margin-bottom: 30px;
@@ -162,7 +164,7 @@
         }
 
         .block-1 .subtitle {
-            font-size: 32px;
+            font-size: clamp(19px, 3vw, 32px);
             line-height: 2.0;
             margin-bottom: 40px;
             color: #BCDCBC;  /* フォールバック（グラデーション非対応時） */
@@ -311,7 +313,7 @@
             text-align: left;
             /* margin-left: 40px; */
             line-height: 1.8;
-            font-size: 18px;
+            font-size: clamp(15px, 3vw, 20px);
             z-index: 1;
         }
 
@@ -324,7 +326,7 @@
             text-align: center;
             border-radius: 8px;
             font-weight: 800;
-            font-size:22px;
+            font-size:clamp(19px, 5vw, 30px);
         }
 
         /* Block 4: First CTA */
@@ -360,7 +362,7 @@
         }
 
         .cta-note {
-            font-size: 12px;
+            font-size: 11px;
             color: var(--text-gray);
             margin-top: 15px;
             text-align: center;
@@ -959,13 +961,6 @@
         }
 
         @media (max-width: 767px) {
-            .block-1 h1 {
-                font-size: 33.6px; /* 70% of 48px */
-            }
-
-            .block-1 .subtitle {
-                font-size: 22.4px; /* 70% of 32px */
-            }
 
             .block-2 .message {
                 font-size: 24px; /* 70% of 24px */
