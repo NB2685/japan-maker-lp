@@ -8,15 +8,18 @@ const observerOptions = {
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting && !entry.target.classList.contains('visible')) {
+            // index によって遅延時間を調整（例: 200ms刻み）
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, index * 200);
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
+document.querySelectorAll('.section').forEach(element => {
+    observer.observe(element);
 });
 
 // ============================================
