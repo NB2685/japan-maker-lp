@@ -10,13 +10,27 @@
             --primary-blue: #1B5E9E;
             --dark-blue: #0A3A66;
             --light-blue: #E8F0F7;
+            --cobalt-blue: #1B5E9E;
+
+
+            /* 木目アクセント */
+            --wood-brown: #8B7355;
+            --wood-light: #D4B896;
+
             --gray-light: #F5F5F5;
             --gray-lighter: #FAFAFA;
             --gray-dark: #2C3E50;
-            --green: #4CAF50;
-            --white: #FFFFFF;
             --text-dark: #333333;
             --text-gray: #666666;
+
+            /* アクセントカラー */
+           --green: #27AE60;
+            --orange: #E67E22;
+            --purple: #8E44AD;
+            --sky-blue: #3498DB;
+
+            --white: #FFFFFF;
+
         }
 
         body {
@@ -35,6 +49,7 @@
             max-width: 900px;
             padding: 0 40px;  ← ★修正: 0 20px → 0 40px に統一
             width: 100%;
+            padding
         }
 
         .section {
@@ -49,25 +64,80 @@
         }
 
         /* Block 1: Headline */
-        .block-1 {
+        /*.block-1 {
             text-align: center;
             padding: 80px 40px;
             background: var(--white);
             position: relative;
             overflow: hidden;
+        }*/
+
+        .frontframe{
+            /*background-color: var(--dark-blue);*/
+            background: linear-gradient(to top, #0A3A66 0%, #15559C 100%);
+            widht: 100vw;
+            overflow: visible;
+            padding-top:20px;
+            padding-bottom: 50px;
+            opacity: 0.8;
+            padding: 30 0px!important;
         }
+
+.block-1 {
+    position: relative;
+    min-height: 60vh;    
+    padding: 100px 40px 80px;
+    color: var(--white); /* 背景に合わせて文字色調整 */
+    text-align: center;
+    /*overflow: hidden;
+    z-index: 1;*/
+}
 
         .block-1::before {
             content: '';
-            position: absolute;
+            position: fixed!important;
             top: 0;
-            right: 0;
-            width: 300px;
-            height: 300px;
-            background: var(--primary-blue);
-            clip-path: polygon(100% 0, 0 0, 100% 100%);
-            opacity: 0.1;
+            left: 0;
+            width: 100vw;
+            height: 70vh;
+             /*position: relative;*/
+             background-image: url('01update.png');
+             background-repeat: no-repeat;
+             background-size: cover;
+             background-position: center center;
+             z-index: -1;
+             pointer-events: none;             
+             filter: saturate(0.8) contrast(1.05); /* 彩度80%、コントラスト+5% */
         }
+
+/* iOSでは::-webkit-background-attachment-x,yのバグがあるため、以下の条件付きCSSを追加 */
+@supports (-webkit-overflow-scrolling: touch) {
+    .block-1 {
+        background-attachment: scroll !important;
+    }
+}
+/* デスクトップ用: 通常の fixed 背景（フォールバック） */
+@media (min-width: 768px) {
+    .block-1 {
+        background-image: url('01update.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+    
+    .block-1::before {
+        display: none; /* デスクトップでは疑似要素不要 */
+    }
+}
+/* webp対応環境でのみ適用 */
+@supports (background-image: url('image.webp')) {
+    .block-1 {
+        background-image: url('01update.webp');
+    }
+}
+/*ここまで*/
+
 
         .block-1 h1 {
             font-size: 48px;
@@ -76,17 +146,33 @@
             margin-bottom: 30px;
             position: relative;
             z-index: 1;
+            color: #FFFFFF; /* フォールバック（グラデーション非対応時） */
+              background: linear-gradient(to right, #F1FFFF, #FFFFFF);
+              /* 背景を文字の形に切り抜く */
+              -webkit-background-clip: text;
+              background-clip: text;
+              /* 切り抜いた部分の背景（グラデーション）を文字色として使用するため、文字色を透明にする */
+              -webkit-text-fill-color: transparent;
+              color: transparent;
         }
 
         .block-1 .subtitle {
             font-size: 32px;
             line-height: 2.0;
             margin-bottom: 40px;
-            color: var(--text-gray);
+            color: #BCDCBC;  /* フォールバック（グラデーション非対応時） */
+              background: linear-gradient(to right, #BCDCBC, #FFFFFF);
+              /* 背景を文字の形に切り抜く */
+              -webkit-background-clip: text;
+              background-clip: text;
+              /* 切り抜いた部分の背景（グラデーション）を文字色として使用するため、文字色を透明にする */
+              -webkit-text-fill-color: transparent;
+              color: transparent;
         }
 
-        .block-1 .visual {
-            margin-top: 40px;
+        .visual {
+            margin-top: 0px;
+            margin-bottom: 80px;
             display: flex;
             justify-content: center;
             gap: 30px;
@@ -99,11 +185,70 @@
             filter: sepia(30%);
         }
 
+
+/* スマホ（480-767px）★最重要 */
+@media (max-width: 767px) {
+    .visual {
+        gap: 15px;               
+        flex-wrap: nowrap;     
+        justify-content: center;
+    }
+    
+    .infrastructure-icon {
+        width: 60px;          
+        height: 60px;
+        flex-shrink: 0;        
+    }
+}
+
+/* 超小型スマホ（375px以下） */
+@media (max-width: 479px) {
+    .visual {
+        gap: 12px;
+        padding: 0 10px;
+    }
+    
+    .infrastructure-icon {
+        width: 55px;
+        height: 55px;
+    }
+}
+
         /* Block 2: Sub Message */
-        .block-2 {
+        /*.block-2 {
             text-align: center;
             padding: 60px 40px;
             background: var(--white);
+        }*/
+
+        .block-2 {
+            text-align: center;
+            padding: 100px 40px;
+            background: var(--primary-blue);
+            color: var(--white);
+            position: relative;
+
+        }
+
+        .block-2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(90deg, 
+                    rgba(255,255,255,0.03) 0px, 
+                    rgba(255,255,255,0.03) 2px, 
+                    transparent 2px, 
+                    transparent 10px),
+                repeating-linear-gradient(0deg, 
+                    rgba(255,255,255,0.03) 0px, 
+                    rgba(255,255,255,0.03) 2px, 
+                    transparent 2px, 
+                    transparent 10px);
+            pointer-events: none;
         }
 
 .block-2 .content {
@@ -113,8 +258,19 @@
     width: 100%;
 }
 
+.block-3 .highlight-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cobalt-blue);
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(232, 240, 247, 0.4) 0%, rgba(232, 240, 247, 0.1) 100%);
+    border-left: 6px solid var(--cobalt-blue);
+    border-radius: 4px;
+}
+
         .block-2 .message {
-            font-size: 24px;
+            font-size: clamp(22px, 5vw, 32px);
             font-weight: 700;
             line-height: 2.0;
         }
@@ -125,18 +281,24 @@
             padding: 60px 0;
             background: var(--white);
             position: relative;
+            width: 100%;
         }
 
-        .block-3::before {
-            content: '';
-            position: absolute;
-            /* left: 40px; */
-            left: 0;
-            top: 10%;
-            width: 4px;
-            height: 80%;
-            background: var(--primary-blue);
-        }
+/*.block-3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15%;
+    width: 6px;
+    height: 70%;
+    background: linear-gradient(
+        180deg,
+        var(--cobalt-blue) 0%,
+        var(--wood-brown) 100%
+    );
+    border-radius: 0 3px 3px 0;
+}*/
+
 
         .block-3 .content {
             max-width: none;
@@ -145,14 +307,19 @@
             /* margin-left: 40px; */
             line-height: 1.8;
             font-size: 18px;
+            z-index: 1;
         }
 
         .block-3 .highlight {
             background: var(--light-blue);
+            color: var(--cobalt-blue);
             padding: 30px;
             margin: 30px 0;
+            margin-top: 50px;
             text-align: center;
             border-radius: 8px;
+            font-weight: 800;
+            font-size:22px;
         }
 
         /* Block 4: First CTA */
@@ -647,7 +814,7 @@
             pading: 60px 0;
             background: var(--white);
             position: relative;
-            margin-bottom: 60px;
+            padding-bottom: 70px;
         }
 
         .block-11::before {
@@ -686,7 +853,7 @@
             /* padding: 60px 40px; */
             padding: 60px 0;
             background: var(--light-blue);
-            margin-bottom: 40px;
+            margin-bottom: 0px;
         }
 
         .block-12 .content {
@@ -796,7 +963,7 @@
             }
 
             .block-2 .message {
-                font-size: 16.8px; /* 70% of 24px */
+                font-size: 24px; /* 70% of 24px */
             }
 
             .block-9 .message {
