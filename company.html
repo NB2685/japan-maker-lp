@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企業情報 | Japan Maker</title>
+<meta name="format-detection" content="telephone=no">
+<style>
+  :root{
+    --primary-blue:#1B5E9E;
+    --dark-blue:#0A3A66;
+    --light-blue:#E8F0F7;
+    --white:#FFFFFF;
+    --text-dark:#333333;
+    --text-gray:#666666;
+    --border:#E5EEF7;
+    --shadow:rgba(27,94,158,0.08);
+  }
+  *{ box-sizing:border-box }
+  body{
+    margin:0; background:#fff; color:var(--text-dark);
+    font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic','Meiryo',Arial,sans-serif;
+    line-height:1.8;
+  }
+  .container{ max-width:900px; margin:0 auto; padding:0 20px }
+
+  /* Header */
+  .c-header{ text-align:center; margin:40px 0 24px }
+  .c-header h1{
+    margin:0 0 8px;
+    font-size:clamp(22px,4.8vw,32px);
+    color:var(--primary-blue);
+    font-weight:800;
+    letter-spacing:.02em;
+  }
+  .c-header p{ margin:0; color:var(--text-gray) }
+
+  /* Card */
+  .card{
+    background:#fff; border:2px solid var(--light-blue); border-radius:12px; padding:20px;
+    box-shadow:0 2px 8px var(--shadow); margin-bottom:20px;
+  }
+  .section-title{
+    font-size:1.15rem; font-weight:800; color:var(--primary-blue);
+    margin:6px 0 12px; padding-bottom:8px; border-bottom:2px solid var(--light-blue);
+  }
+
+  /* 概要（dl） */
+  .kv{
+    display:grid; grid-template-columns:1fr; gap:10px;
+  }
+  .row{ display:grid; grid-template-columns:160px 1fr; gap:12px; align-items:flex-start }
+  .row dt{
+    color:var(--dark-blue); font-weight:700;
+  }
+  .row dd{ margin:0 }
+
+  /* 2カラム可能なセクション（大画面） */
+  .grid-2{ display:grid; grid-template-columns:1fr; gap:16px }
+  @media (min-width: 900px){
+    .grid-2{ grid-template-columns:1fr 1fr }
+  }
+
+  /* リスト */
+  ul{ margin:0 0 12px 20px }
+  li{ margin:6px 0 }
+
+  /* アクセス */
+  .map{
+    width:100%; border:1px solid var(--border); border-radius:10px; overflow:hidden; height:280px;
+    background:#F7FBFF;
+  }
+
+  /* 連絡先カード */
+  .contact a{ color:var(--primary-blue); text-decoration:none }
+  .contact a:hover{ text-decoration:underline }
+
+  /* フッタ */
+  .footer{
+    text-align:center; color:var(--text-gray); font-size:.9rem;
+    padding:26px 0 40px; border-top:1px solid var(--light-blue); margin-top:30px
+  }
+
+  /* ページ上部へ */
+  .back{ text-align:center; margin:14px 0 0 }
+  .back a{ color:var(--primary-blue); text-decoration:none }
+  .back a:hover{ text-decoration:underline }
+</style>
+</head>
+<body>
+
+<main class="container">
+
+<header class="c-header container">
+  <h1>企業情報</h1>
+  <!--p>基本情報と拠点・連絡先をご案内します。</p-->
+</header>
+
+  <!-- 会社概要 -->
+  <section class="card" aria-labelledby="about-title">
+    <h2 id="about-title" class="section-title">会社概要</h2>
+    <div class="kv">
+      <div class="row"><dt>会社名</dt><dd>BRIDGEHEARTS PARTNER - FZCO</dd></div>
+      <div class="row"><dt>所在地</dt><dd>DSO-IFZA Dubai Silicon Oasis Dubai - UAE 171456</dd></div>
+      <div class="row"><dt>代表者</dt><dd>CHOI YOUNGBEOM</dd></div>
+      <div class="row"><dt>設立</dt><dd>2021年5月</dd></div>
+      <!--div class="row"><dt>資本金</dt><dd>○○</dd></div-->
+      <div class="row"><dt>事業内容</dt><dd>適性診断サービスの企画・開発・運営／研修・教育プログラムの提供／関連システムの受託開発 等</dd></div>
+      <!--div class="row"><dt>適格請求書</dt><dd>登録番号：T367102567890123</dd></div-->
+    </div>
+  </section>
+
+  <!-- 事業内容・役員 -->
+  <section class="card">
+    <!--div class="card"-->
+      <h2 class="section-title">事業内容</h2>
+      <ul>
+        <li>Japan Maker診断の提供、データ分析・レポーティング</li>
+        <li>学習ロードマップ設計、研修・オンボーディング支援</li>
+        <li>教育・製造・インフラ業界向けコンサルティング</li>
+        <li>Webアプリ・API・データ基盤の設計・開発・運用</li>
+      </ul>
+    <!--/div-->
+    <!--div class="card">
+      <h2 class="section-title">役員</h2>
+      <ul>
+        <li>代表取締役　**</li>
+        <li>取締役　　　**</li>
+        <li>監査役　　　**</li>
+      </ul>
+    </div-->
+  </section>
+
+  <!-- 拠点・アクセス -->
+  <!--section class="card" aria-labelledby="access-title">
+    <h2 id="access-title" class="section-title">拠点・アクセス</h2>
+    <p>本社：〒000-0000 東京都〇〇区〇〇 0-0-0（最寄り：〇〇線 〇〇駅 徒歩5分）</p>
+    <div class="map" aria-label="Google Map"-->
+      <!-- 埋め込みURLに置き換え -->
+      <!--iframe
+        title="本社マップ"
+        width="100%" height="100%" frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed?pb="
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section-->
+
+  <!-- 沿革 -->
+  <section class="card">
+    <h2 class="section-title">沿革</h2>
+    <ul>
+      <li>2021年5月　BRIDGEHEARTS PARTNER - FZCO設立</li>
+      <li>2025年11月　診断サービスβ版を公開</li>
+      <li>2025年12月　多摩センター拠点・オンラインのハイブリッド提供を開始</li>
+    </ul>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section class="card contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title">お問い合わせ</h2>
+    <p>メール：<a href="mailto:info@japan-maker.com">info[アットマーク]japan-maker.com</a></p>
+    <p>受付時間：平日 10:00–18:00（年末年始・当社指定日を除く）</p>
+    <!--div class="back"><a href="#top">ページ先頭へ戻る</a></div-->
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© Japan Maker</p>
+</footer>
+
+<!-- 構造化データ（任意：検索やSNSでの表示改善に寄与） -->
+<!--script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Japan Maker株式会社（仮）",
+  "url": "https://www.japan-maker.com/",
+  "logo": "https://www.japan-maker.com/assets/logo.png",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "info@japan-maker.com",
+    "availableLanguage": ["ja"]
+  }],
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "000-0000",
+    "addressRegion": "東京都",
+    "addressLocality": "〇〇区",
+    "streetAddress": "〇〇 0-0-0"
+  }
+}
+</script-->
+</body>
+</html>

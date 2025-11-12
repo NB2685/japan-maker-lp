@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特定商取引法に基づく表記</title>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Noto+Sans+JP:wght@100..900&amp;display=swap" rel="stylesheet"/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Figtree', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background: #1B5E9E;
+            color: #fff;
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ========================================
+           コンテナ
+        ======================================== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* ========================================
+           ヘッダー
+        ======================================== */
+        .page-header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .page-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+
+        .page-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.05em;
+        }
+
+        /* ========================================
+           コンテンツセクション
+        ======================================== */
+        .content-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+            color: #BBB;
+            letter-spacing: 0.05em;
+        }
+
+        .section-content {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: left;
+        }
+
+        .section-content p {
+            margin-bottom: 1.2em;
+        }
+
+        .section-content strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           注意事項ボックス
+        ======================================== */
+        .notice-box {
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 4px solid #8B7355;
+            padding: 25px 30px;
+            margin: 30px 0;
+            border-radius: 6px;
+        }
+
+        .notice-box p {
+            margin-bottom: 0.8em;
+        }
+
+        .notice-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           フッター
+        ======================================== */
+        .page-footer {
+            text-align: center;
+            padding-top: 60px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 215, 0, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           レスポンシブ
+        ======================================== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 30px;
+            }
+
+            .page-header {
+                margin-bottom: 60px;
+            }
+
+            .page-title {
+                font-size: 1.6rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.85rem;
+            }
+
+            .content-section {
+                margin-bottom: 50px;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+
+            .section-content {
+                font-size: 0.9rem;
+            }
+
+            .notice-box {
+                padding: 20px 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 50px 20px;
+            }
+
+            .page-title {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.85rem;
+                line-height: 1.9;
+            }
+
+            .notice-box {
+                padding: 18px 16px;
+                font-size: 0.85rem;
+            }
+
+            .back-link {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="page-header">
+            <h1 class="page-title">特定商取引法に基づく表記</h1>
+            <!--p class="page-subtitle">Tokutei Shouitorihiki Hou</p-->
+        </header>
+
+        <!-- コンテンツ -->
+        <main>
+            <!-- 販売業者 -->
+            <section class="content-section">
+                <h2 class="section-title">販売業者・請求屋号</h2>
+                <div class="section-content">
+                    <p>BRIDGEHEARTS PARTNER - FZCO</p>
+                </div>
+            </section>
+
+            <!-- 販売責任者 -->
+            <section class="content-section">
+                <h2 class="section-title">販売責任者氏名</h2>
+                <div class="section-content">
+                    <p>CHOI YOUNGBEOM</p>
+                </div>
+            </section>
+
+            <!-- 所在地 -->
+            <section class="content-section">
+                <h2 class="section-title">所在地</h2>
+                <div class="section-content">
+                    <p>DSO-IFZA Dubai Silicon Oasis Dubai - UAE 171456</p>
+                </div>
+            </section>
+
+            <!-- 商品代金以外の必要料金 -->
+            <section class="content-section">
+                <h2 class="section-title">商品代金以外の必要料金</h2>
+                <div class="section-content">
+                    <p>送料が別途かかります。</p>
+                    <p><strong>※お支払いいただく金額は、商品価格（消費税込み）+ 送料となります。</strong></p>
+                    <p>申し込みの有効期限：制限事項のある場合は商品に注記</p>
+                    <p>販売数量：制限事項のある場合は商品に注記</p>
+                </div>
+            </section>
+
+            <!-- 引き渡し時期 -->
+            <section class="content-section">
+                <h2 class="section-title">引き渡し時期</h2>
+                <div class="section-content">
+                    <p>ご注文いただいた商品については、1週間以内にお客様の「ご指定の場所」に発送いたします。</p>
+                    <p>万が一、発送が遅れそうな場合や、商品が品切れの場合は、メールや郵便などでご連絡を差し上げます。</p>
+                </div>
+            </section>
+
+            <!-- お支払い方法 -->
+            <section class="content-section">
+                <h2 class="section-title">お支払い方法</h2>
+                <div class="section-content">
+                    <p>クレジットカードにて決済</p>
+                </div>
+            </section>
+
+            <!-- 返品・交換 -->
+            <section class="content-section">
+                <h2 class="section-title">返品・交換</h2>
+                <div class="section-content">
+                    <p>お客様のご都合で傷、破損が生じた商品の返品・交換はお受けできませんのでご了承ください。</p>
+                    <p>そのほか、返金制度に基づく返品の場合は、往復送料、代引き手数料などの手数料をご負担いただくことになります。</p>
+                    
+                    <div class="notice-box">
+                        <p><strong>※弊社の返金保証はお一人様一度限りとなります。</strong></p>
+                        <p>一度返品された方については、以降、弊社の商品を購入いただいても返金保証はつきませんのでご了承ください。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 不良品 -->
+            <section class="content-section">
+                <h2 class="section-title">不良品・注文した商品と違う場合</h2>
+                <div class="section-content">
+                    <p>商品がお手元に届きましたら、ご注文された商品と間違いがないかをご確認ください。</p>
+                    <p>万が一、お客様のご注文と異なる商品や不良品の場合はご連絡をください。<strong>すべて無償にて交換いたします。</strong></p>
+                    <p>その場合は、お手数ですが、送料・手数料、当社負担の「着払い」でお送りいただく形になります。</p>
+                </div>
+            </section>
+
+            <!-- 未成年 -->
+            <section class="content-section">
+                <h2 class="section-title">未成年のお客様のご注文について</h2>
+                <div class="section-content">
+                    <p>弊社の商品は、事業・商売をする方を対象に作成されています。</p>
+                    <p>購入者がたとえ未成年であっても、事業・商売をされている方は、法律上「未成年を理由とする」返品が不可能になります。</p>
+                    <p>そのことをご承諾いただき、親権者の同意を得た後ご購入ください。</p>
+                    
+                    <div class="notice-box">
+                        <p><strong>そうでない場合、弊社の商品は未成年には販売できかねますので、ご了承ください。</strong></p>
+                        <p>尚、未成年者が成人と偽って購入された場合は、民法により成人者と同様の扱いになりますので、ご注意ください。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+    </div>
+</body>
+</html>

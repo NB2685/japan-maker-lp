@@ -1,0 +1,506 @@
+/* Japan Maker Diagnosis Page – Drop-in replacement for style-moon.css */
+
+/* Brand Tokens */
+:root {
+  /* Japan Maker base */
+  --primary-blue: #1B5E9E;
+  --dark-blue: #0A3A66;
+  --light-blue: #E8F0F7;
+  --gray-dark: #2C3E50;
+  --text-dark: #333333;
+  --text-gray: #666666;
+  --white: #FFFFFF;
+  --shadow-blue: rgba(27, 94, 158, 0.15);
+  --shadow-blue-hover: rgba(27, 94, 158, 0.30);
+
+  /* Mapping from moon.css tokens to JM brand */
+  --primary-color: var(--primary-blue);
+  --secondary-color: #6699CC;          /* 補助的な薄青 */
+  --accent-color: var(--light-blue);   /* 枠や分離のアクセント */
+  --background: var(--white);
+  --card-background: var(--white);
+  --shadow: var(--shadow-blue);
+  --shadow-hover: var(--shadow-blue-hover);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Base */
+html, body { width: 100%; height: 100%; overflow-x: hidden; }
+
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* App Wrapper */
+#app { min-height: 100vh; position: relative; }
+
+/* Page Transitions */
+.page {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: var(--transition);
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: var(--background);
+}
+
+.page.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Container */
+.container { max-width: 720px; margin: 0 auto; width: 100%; }
+
+/* Typography */
+.tribal-title {
+  font-size: clamp(28px, 5.6vw, 40px);
+  font-weight: 800;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  text-align: center; /* 短い理念・見出しは中央寄せ */
+}
+
+.section-title {
+  font-size: clamp(20px, 4.5vw, 28px);
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+  text-align: center; /* サブコピーは中央寄せ */
+}
+
+.subtitle {
+  font-size: clamp(14px, 3.8vw, 18px);
+  color: var(--text-gray);
+  margin-bottom: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.vision-text, .description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+  text-align: left; /* 説明は左寄せ */
+}
+
+/* Alignment Helpers */
+.centered { text-align: center; }
+.left-aligned { text-align: left; }
+
+/* Header Block */
+.page-header { margin-bottom: 36px; }
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--light-blue);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-blue), var(--dark-blue));
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin-bottom: 24px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Question */
+.question-container { margin-bottom: 28px; }
+
+.question-text {
+  font-size: clamp(18px, 4.8vw, 24px);
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: center; /* 問いは短く中央で提示 */
+}
+
+/* Choices */
+.choices { display: flex; flex-direction: column; gap: 14px; }
+
+.choice-btn {
+  background-color: var(--card-background);
+  border: 2px solid var(--accent-color);
+  border-radius: var(--border-radius);
+  padding: 18px 20px;
+  font-size: 1rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: left; /* 決断の導線は左寄せ */
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.choice-btn::before {
+  content: '';
+  position: absolute; left: 0; top: 0;
+  width: 6px; height: 100%;
+  background: var(--primary-blue);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+.choice-btn:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 6px 18px var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.choice-btn:hover::before { transform: scaleY(1); }
+
+.choice-btn:active { transform: translateY(0); }
+
+.choice-btn.selected {
+  background-color: var(--light-blue);
+  border-color: var(--primary-blue);
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  min-width: 200px;
+  min-height: 54px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-blue);
+  box-shadow: 0 8px 22px var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-blue);
+  border: 2px solid var(--primary-blue);
+  margin-left: 12px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--light-blue);
+  box-shadow: 0 6px 18px var(--shadow-hover);
+}
+
+/* Action Area */
+.action-area { margin-top: 28px; margin: 0 auto; text-align: center; }
+
+/* Form */
+.email-form { max-width: 520px; margin: 0 auto; }
+
+.form-group { margin-bottom: 18px; }
+
+.form-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  transition: var(--transition);
+  min-height: 52px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(27, 94, 158, 0.15);
+}
+
+/* Result Page */
+.result-title {
+  font-size: clamp(24px, 5.8vw, 36px);
+  color: var(--primary-blue);
+  font-weight: 800;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.result-description {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 28px;
+  color: var(--text-dark);
+  text-align: left;
+}
+
+.result-details {
+  background-color: var(--card-background);
+  padding: 24px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--accent-color);
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.result-details h3 {
+  font-size: 1.2rem;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+}
+
+.score-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.score-item:last-child { border-bottom: none; }
+
+.score-label { font-weight: 700; color: var(--text-dark); }
+
+.score-value { font-size: 1.1rem; font-weight: 800; color: var(--primary-blue); }
+
+/* Loading Overlay */
+.loading-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(10, 58, 102, 0.92); /* JMトーンの暗幕 */
+  display: none; justify-content: center; align-items: center; flex-direction: column;
+  z-index: 1000;
+}
+
+.loading-overlay.active { display: flex; }
+
+.spinner {
+  width: 50px; height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.35);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.loading-overlay p {
+  font-size: 1.05rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container { max-width: 100%; }
+  .page { padding: 28px 16px; }
+  .tribal-title { font-size: clamp(22px, 6vw, 30px); }
+  .section-title { font-size: clamp(18px, 5.2vw, 24px); }
+  .subtitle { font-size: 0.95rem; }
+  .question-text { font-size: clamp(16px, 5.2vw, 22px); }
+  .choice-btn { padding: 16px 16px; font-size: 0.95rem; min-height: 56px; }
+  .btn { padding: 14px 24px; font-size: 0.95rem; min-width: 180px; }
+  .btn-secondary { margin-left: 0; margin-top: 12px; }
+  .result-title { font-size: clamp(20px, 6vw, 28px); }
+  .result-details { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  .tribal-title { font-size: clamp(20px, 7vw, 26px); }
+  .vision-text, .description { font-size: 0.95rem; }
+  .question-text { font-size: clamp(16px, 6vw, 20px); }
+  .choice-btn { padding: 14px 14px; font-size: 0.92rem; }
+  .btn { width: 100%; min-width: auto; }
+  .progress-text { font-size: 0.85rem; }
+}
+
+
+
+/* ID折り返し */
+#diagnosisId{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+/* 更に表示ボタンのデザイン */
+#button-container {
+  /* 親要素の幅いっぱいに広げ、Flexboxで子要素を中央に配置 */
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 水平方向の中央揃え */
+  margin-top: 30px; /* 上部に余白を設定 */
+  margin-bottom: 30px; /* 下部に余白を設定 */
+}
+
+.load-more-btn {
+  /* サイズと形状 */
+  padding: 12px 30px;
+  font-size: 16px; 
+  font-weight: bold;
+  border-radius: 6px; /* 角を少し丸くする */
+  cursor: pointer;
+  border: none; /* 境界線は使用しない（グラデーションを活かすため） */
+  
+  /* グラデーション背景（黒〜濃いグレー） */
+  background-image: linear-gradient(to top, #1a1a1a, #333333); 
+  
+  /* 文字色 */
+  color: #ffffff; /* 白い文字 */
+  
+  /* 影（黒い背景にボタンを浮き上がらせる） */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+  
+  /* アニメーション */
+  transition: all 0.3s ease;
+}
+
+/* マウスオーバー時のスタイル (ホバーエフェクト) */
+.load-more-btn:hover {
+  /* ホバーで背景をアクセントカラーのグラデーションに変化させる */
+  background-image: linear-gradient(to top, #1e90ff, #50bfff); /* 青系のグラデーション */
+  color: #ffffff;
+  /* 影を強くして、押せる感じを強調 */
+  box-shadow: 0 6px 15px rgba(30, 144, 255, 0.5); 
+}
+
+/* 押したときのスタイル (アクティブエフェクト) */
+.load-more-btn:active {
+  transform: translateY(1px); /* 少し押し込むような効果 */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+.agree {
+font-size: 0.7rem;
+line-height: 1.4;
+padding-top: 10px;
+margin-bottom: 32px;
+color: var(--text-dark);
+opacity: 0.6;
+font-weight: 100;
+text-align:center;
+width:280px;
+margin:0 auto;
+
+}
+
+.purpose {
+font-size: 0.8rem;
+line-height: 1.4;
+padding-top: 30px;
+margin-bottom: 32px;
+color: var(--text-dark);
+opacity: 0.8;
+font-weight: 100;
+text-align:left;
+margin:0 auto;
+
+}
+
+
+
+
+        /* ========================================
+           フッター
+        ======================================== */
+        .footer {
+            background: var(--light-blue);
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 0px;
+        }
+
+        .footer-links {
+            display: inline;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 0px;
+        }
+
+        .footer-links a {
+            color: rgba(21, 21, 21, 0.7);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: rgba(21, 21, 21, 0.5);
+            letter-spacing: 0.05em;
+            margin-top: 20px;
+        }
+
+
+
+
+

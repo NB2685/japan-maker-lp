@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Maker診断 - あなたの道を見つける</title>
+    <!--link rel="stylesheet" href="style.css"-->
+    <link rel="stylesheet" href="style-for-jm.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Start Page -->
+        <section id="start-page" class="page active">
+            <div class="container">
+                <header class="page-header centered">
+                    <h1 class="tribal-title">Japan Maker診断</h1>
+                    <p class="subtitle">あなたの道を見つける</p>
+                </header>
+                <div class="content centered">
+                    <p class="vision-text">30の問いを通じて、<br>あなたが歩むべき道を明らかにします</p>
+                    <p class="description left-aligned">
+                        この診断は、あなたの本質的な価値観、判断基準、<br>
+                        そして世界との関わり方を探求します。<br>
+                        直感に従って、最も心に響く選択肢を選んでください。</p>
+                </div>
+                <div class="action-area">
+                    <button id="start-btn" class="btn btn-primary">診断を始める</button>
+                </div>
+<div class="purpose">
+<a href="terms.html" target="_blank">ご利用規約</a>
+</div>
+            </div>
+        </section>
+
+        <!-- Question Page -->
+        <section id="question-page" class="page">
+            <div class="container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="progress-text" id="progress-text">Q1/30</div>
+                
+                <div class="question-container">
+                    <h2 class="question-text" id="question-text"></h2>
+                    <div class="choices" id="choices-container">
+                        <!-- Choices will be dynamically inserted -->
+                    </div>
+                </div>
+                
+                <div class="action-area left-aligned" id="complete-action" style="display: none;">
+                    <button id="complete-btn" class="btn btn-primary">診断を完了する</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Page -->
+        <section id="email-page" class="page">
+            <div class="container">
+                <header class="page-header centered">
+                    <h2 class="section-title">診断完了</h2>
+                    <p class="subtitle">あと一歩で結果が分かります</p>
+                </header>
+                <div class="content">
+                    <p class="description left-aligned" style="max-width:520px;margin:0 auto;">診断結果をお届けするため、<br>メールアドレスをご入力ください。</p><br>
+                    <form id="email-form" class="email-form">
+                        <div class="form-group">
+                            <label for="email-input" class="form-label">メールアドレス</label>
+                            <input type="email" id="email-input" class="form-control" placeholder="example@email.com" required>
+                        </div>
+                        <div class="action-area left-aligned">
+                            <button type="submit" class="btn btn-primary">結果を表示</button>
+                        </div>
+                    </form>
+
+
+                    <div class="agree">
+                        続行することで<a href="terms.html" target="_blank">ご利用規約</a>および<br><a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意したものとみなします。</div>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Page -->
+        <section id="result-page" class="page">
+            <div class="container">
+                <header class="page-header centered">
+                    <h2 class="section-title">あなたの道は</h2>
+                    <h1 class="tribal-title result-title" id="result-name"></h1>
+                </header>
+                <div class="content">
+                    <p class="result-description left-aligned" id="result-description"></p>
+                    <div class="result-details left-aligned">
+                        <h3>診断結果の詳細</h3>
+                        <div id="result-breakdown"></div>
+                    </div>
+                </div>
+                <!--div class="action-area left-aligned">
+                    <button id="restart-btn" class="btn btn-primary">もう一度診断する</button>
+                    <button id="home-btn" class="btn btn-secondary">ホームへ戻る</button>
+                </div-->
+            </div>
+        </section>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="spinner"></div>
+            <p>診断中...</p>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="tokusho.html" target="_blank">特商法</a> 　　 
+            <a href="privacy.html" target="_blank">プライバシーポリシー</a>
+        </div>
+        <div class="footer-copyright">
+            © Japan Maker
+        </div>
+    </footer>
+
+    <script src="app-for-jm.js"></script>
+</body>
+</html>

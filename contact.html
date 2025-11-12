@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | Japan Maker</title>
+<meta name="format-detection" content="telephone=no">
+<style>
+  :root{
+    --primary-blue:#1B5E9E;
+    --dark-blue:#0A3A66;
+    --light-blue:#E8F0F7;
+    --white:#FFFFFF;
+    --text-dark:#333333;
+    --text-gray:#666666;
+    --border:#E5EEF7;
+    --shadow:rgba(27,94,158,0.08);
+    --error:#D32F2F;
+    --success:#1B5E9E;
+  }
+  *{ box-sizing:border-box }
+  body{
+    margin:0; background:#fff; color:var(--text-dark);
+    font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic','Meiryo',Arial,sans-serif;
+    line-height:1.8;
+  }
+  .container{ max-width:900px; margin:0 auto; padding:0 20px }
+
+  .c-header{ text-align:center; margin:40px 0 24px }
+  .c-header h1{
+    margin:0 0 8px; font-size:clamp(22px,4.8vw,32px); color:var(--primary-blue); font-weight:800; letter-spacing:.02em;
+  }
+  .c-header p{ margin:0; color:var(--text-gray) }
+
+  .card{
+    background:#fff; border:2px solid var(--light-blue); border-radius:12px; padding:20px;
+    box-shadow:0 2px 8px var(--shadow); margin-bottom:20px;
+  }
+  .section-title{
+    font-size:1.15rem; font-weight:800; color:var(--primary-blue);
+    margin:6px 0 12px; padding-bottom:8px; border-bottom:2px solid var(--light-blue);
+  }
+
+  .form-grid{ display:grid; grid-template-columns:1fr; gap:14px }
+  .form-row{ display:grid; grid-template-columns:1fr; gap:8px }
+  label{ font-weight:700; color:var(--dark-blue) }
+  .req{ font-weight:700; color:var(--primary-blue); font-size:.9rem; margin-left:6px }
+
+  input[type="text"],input[type="email"],input[type="tel"],select,textarea{
+    width:100%; padding:12px 14px; border-radius:10px;
+    border:2px solid var(--light-blue); background:#fff; color:var(--text-dark);
+    font-size:1rem; transition:border-color .2s, box-shadow .2s;
+  }
+  input:focus,select:focus,textarea:focus{
+    outline:none; border-color:var(--primary-blue); box-shadow:0 0 0 3px rgba(27,94,158,.12);
+  }
+  textarea{ min-height:140px; resize:vertical }
+
+  .hint{ color:var(--text-gray); font-size:.92rem }
+  .error-msg{ color:var(--error); font-size:.92rem; display:none }
+  .success-box,.error-box{
+    border-radius:10px; padding:12px 14px; margin-top:10px; display:none
+  }
+  .success-box{ border:1px solid var(--light-blue); background:#F7FBFF; color:var(--success); }
+  .error-box{ border:1px solid #FAD4D4; background:#FFF6F6; color:var(--error); }
+
+  .agree{
+    display:flex; gap:10px; align-items:flex-start; color:var(--text-dark); margin-top:6px
+  }
+  .agree input{ transform:scale(1.1); margin-top:3px }
+
+  .cta{ text-align:center; margin-top:6px }
+  .btn{
+    display:inline-block; padding:12px 22px; border-radius:10px; font-weight:800; text-decoration:none; cursor:pointer;
+    min-width:220px; text-align:center;
+  }
+  .btn-primary{ background:var(--primary-blue); color:#fff; border:none; }
+  .btn-primary[disabled]{ opacity:.45; cursor:not-allowed }
+
+  .footer{
+    text-align:center; color:var(--text-gray); font-size:.9rem; padding:26px 0 40px; border-top:1px solid var(--light-blue); margin-top:30px
+  }
+
+  /* honeypot */
+  .hp{ position:absolute; left:-5000px; opacity:0; height:0; width:0; overflow:hidden }
+
+  @media (min-width: 860px){
+    .form-grid.two{ grid-template-columns:1fr 1fr; gap:14px }
+  }
+</style>
+</head>
+<body>
+
+
+
+<main class="container">
+
+<header class="c-header container" id="top">
+  <h1>お問い合わせ</h1>
+  <p style="text-align:left">サービスに関するご質問やお見積りのご依頼は、こちらのフォームからご連絡ください。</p>
+</header>
+
+  <section class="card" aria-labelledby="form-title">
+    <h2 id="form-title" class="section-title">フォーム</h2>
+
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+      <!-- 成功/失敗メッセージ -->
+      <div id="successBox" class="success-box">送信が完了しました。折り返しご連絡いたします。ありがとうございます。</div>
+      <div id="errorBox" class="error-box">送信に失敗しました。時間をおいて再度お試しください。</div>
+
+      <!-- 2カラム（大画面） -->
+      <div class="form-grid two">
+        <div class="form-row">
+          <label for="name">お名前<span class="req">必須</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <div class="error-msg" data-for="name">お名前を入力してください。</div>
+        </div>
+        <div class="form-row">
+          <label for="email">メールアドレス<span class="req">必須</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <div class="error-msg" data-for="email">正しいメールアドレスを入力してください。</div>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="tel">電話番号</label>
+          <input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel">
+          <div class="hint">緊急のご連絡が必要な場合のみ使用します。</div>
+        </div>
+
+        <div class="form-row">
+          <label for="topic">お問い合わせ種別<span class="req">必須</span></label>
+          <select id="topic" name="topic" required>
+            <option value="">選択してください</option>
+            <option>サービス全般について</option>
+            <option>診断結果・アカウント</option>
+            <option>研修・見積の相談</option>
+            <option>取材・パートナー</option>
+            <option>その他</option>
+          </select>
+          <div class="error-msg" data-for="topic">お問い合わせ種別を選択してください。</div>
+        </div>
+
+        <div class="form-row">
+          <label for="message">お問い合わせ内容<span class="req">必須</span></label>
+          <textarea id="message" name="message" required></textarea>
+          <div class="error-msg" data-for="message">お問い合わせ内容を入力してください。</div>
+        </div>
+
+        <!-- 同意 -->
+        <div class="form-row">
+          <div class="agree">
+            <input id="agree" type="checkbox" required>
+            <label for="agree">送信により、<a href="terms.html" style="color:var(--primary-blue);text-decoration:none;" target="_blank">利用規約</a>と
+              <a href="privacy.html" style="color:var(--primary-blue);text-decoration:none;" target="_blank">プライバシーポリシー</a>に同意します。</label>
+          </div>
+          <div class="error-msg" data-for="agree">送信には同意が必要です。</div>
+        </div>
+
+        <!-- ハニーポット（ボット対策） -->
+        <div class="hp">
+          <label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <!-- 送信メタ -->
+        <input type="hidden" name="_subject" value="【Japan Maker】お問い合わせが届きました">
+        <input type="hidden" name="_template" value="table">
+        <!-- success/redirectを使う場合（任意）：<input type="hidden" name="_next" value="https://example.com/thanks.html"> -->
+
+        <div class="cta">
+          <button id="submitBtn" type="submit" class="btn btn-primary">送信する</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© Japan Maker</p>
+</footer>
+
+<script>
+  (function(){
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successBox = document.getElementById('successBox');
+    const errorBox = document.getElementById('errorBox');
+
+    function showError(name, show){
+      const el = document.querySelector('.error-msg[data-for="'+name+'"]');
+      if(!el) return;
+      el.style.display = show ? 'block' : 'none';
+    }
+
+    function validate(){
+      let ok = true;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const topic = form.topic.value.trim();
+      const message = form.message.value.trim();
+      const agree = document.getElementById('agree').checked;
+
+      showError('name', !name);
+      ok = ok && !!name;
+
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      showError('email', !validEmail);
+      ok = ok && validEmail;
+
+      showError('topic', !topic);
+      ok = ok && !!topic;
+
+      showError('message', !message);
+      ok = ok && !!message;
+
+      showError('agree', !agree);
+      ok = ok && !!agree;
+
+      return ok;
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successBox.style.display = 'none';
+      errorBox.style.display = 'none';
+
+      if(!validate()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = .45;
+      submitBtn.style.cursor = 'not-allowed';
+
+      try{
+        const data = new FormData(form);
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if(res.ok){
+          form.reset();
+          successBox.style.display = 'block';
+        }else{
+          const json = await res.json().catch(()=> ({}));
+          errorBox.textContent = json.errors ? json.errors.map(e => e.message).join(' / ') : '送信に失敗しました。時間をおいて再度お試しください。';
+          errorBox.style.display = 'block';
+        }
+      }catch(err){
+        errorBox.textContent = '通信エラーが発生しました。時間をおいて再度お試しください。';
+        errorBox.style.display = 'block';
+      }finally{
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = 1;
+        submitBtn.style.cursor = 'pointer';
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

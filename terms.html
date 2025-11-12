@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ご利用規約 | Japan Maker診断</title>
+<meta name="format-detection" content="telephone=no">
+<style>
+  :root{
+    --primary-blue:#1B5E9E;
+    --dark-blue:#0A3A66;
+    --light-blue:#E8F0F7;
+    --white:#FFFFFF;
+    --text-dark:#333333;
+    --text-gray:#666666;
+    --border:#E5EEF7;
+    --shadow:rgba(27,94,158,0.08);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:#fff; color:var(--text-dark);
+    font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic','Meiryo',Arial,sans-serif;
+    line-height:1.8;
+  }
+  .container{max-width:900px;margin:0 auto;padding:0 20px}
+  .c-header{ text-align:center; margin:40px 0 24px }
+  .c-header h1{
+    margin:0 0 8px; font-size:clamp(22px,4.8vw,32px); color:var(--primary-blue); font-weight:800; letter-spacing:.02em;
+  }
+  .c-header p{ margin:0; color:var(--text-gray) }
+
+  .card{
+    background:#fff; border:2px solid var(--light-blue); border-radius:12px; padding:20px;
+    box-shadow:0 2px 8px var(--shadow); margin-bottom:20px;
+  }
+
+  .toc{ padding:16px; background:#F8FBFF; border:1px solid var(--border); border-radius:10px; }
+  .toc h2{ font-size:1.05rem; color:var(--dark-blue); margin:0 0 8px; }
+  .toc ul{ margin:0; padding-left:18px }
+  .toc li{ margin:6px 0; }
+  .toc a{ color:var(--primary-blue); text-decoration:none }
+  .toc a:hover{ text-decoration:underline }
+
+  .section-title{
+    font-size:1.15rem; font-weight:800; color:var(--primary-blue);
+    margin:26px 0 10px; padding-bottom:8px; border-bottom:2px solid var(--light-blue);
+  }
+  p{ margin:0 0 12px }
+  ul{ margin:0 0 12px 20px }
+  li{ margin:6px 0 }
+  .note{
+    background:linear-gradient(135deg,rgba(27,94,158,.06),rgba(27,94,158,.03));
+    border:1px solid var(--light-blue); border-radius:10px; padding:12px 14px; color:var(--dark-blue);
+  }
+
+  .agree-wrap{
+    display:flex; align-items:flex-start; gap:10px; margin-top:16px; color:var(--text-dark);
+  }
+  .agree-wrap input[type="checkbox"]{ margin-top:4px; transform:scale(1.1) }
+
+  .cta-area{
+    text-align:center; margin:18px 0 40px;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .btn{
+    display:inline-block; padding:12px 22px; border-radius:10px; font-weight:800; text-decoration:none; cursor:pointer;
+    min-width:220px; text-align:center;
+  }
+  .btn-primary{ background:var(--primary-blue); color:#fff; border:none; }
+  .btn-primary[disabled]{ opacity:.45; cursor:not-allowed }
+  .btn-secondary{ background:#fff; color:var(--primary-blue); border:2px solid var(--primary-blue); }
+
+  .meta{
+    font-size:.92rem; color:var(--text-gray); margin-top:10px
+  }
+  .footer{
+    text-align:center; color:var(--text-gray); font-size:.9rem; padding:26px 0 40px; border-top:1px solid var(--light-blue); margin-top:30px
+  }
+  .back-to-top{ text-align:center; margin:16px 0 0 }
+  .back-to-top a{ color:var(--primary-blue); text-decoration:none }
+  .back-to-top a:hover{ text-decoration:underline }
+
+  /* anchor offset for fixed headers (if any) */
+  :target{ scroll-margin-top:90px; }
+</style>
+</head>
+<body>
+
+<main class="container">
+
+<header class="c-header container" id="top">
+  <h1>ご利用規約</h1>
+  <p style="text-align:left">Japan Maker診断（以下「本サービス」）のご利用にあたり、以下の規約への同意が必要です。</p>
+</header>
+
+  <!-- 目次 -->
+  <div class="card toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">目次</h2>
+    <ul>
+      <li><a href="#sec-accept">1. 規約への同意</a></li>
+      <li><a href="#sec-service">2. 本サービスの内容</a></li>
+      <li><a href="#sec-account">3. 利用資格・アカウント</a></li>
+      <li><a href="#sec-fees">4. 料金・決済・返金</a></li>
+      <li><a href="#sec-results">5. 診断結果の取扱い（非保証等）</a></li>
+      <li><a href="#sec-prohibited">6. 禁止事項</a></li>
+      <li><a href="#sec-ip">7. 知的財産権</a></li>
+      <li><a href="#sec-privacy">8. 個人情報・データの取扱い</a></li>
+      <li><a href="#sec-3p">9. 外部サービスの利用</a></li>
+      <li><a href="#sec-changes">10. 規約の変更</a></li>
+      <li><a href="#sec-suspension">11. 提供の停止・終了</a></li>
+      <li><a href="#sec-disclaimer">12. 免責事項</a></li>
+      <li><a href="#sec-liability">13. 責任の限定</a></li>
+      <li><a href="#sec-indemnity">14. 保障（補償）</a></li>
+      <li><a href="#sec-law">15. 準拠法・合意管轄</a></li>
+      <li><a href="#sec-contact">16. お問い合わせ</a></li>
+    </ul>
+  </div>
+
+  <!-- 本文 -->
+  <section id="sec-accept">
+    <h2 class="section-title">1. 規約への同意</h2>
+    <p>本サービスをご利用になる前に、本規約の全てに同意いただく必要があります。未成年の方は、親権者等の法定代理人の同意を得た上でご利用ください。</p>
+  </section>
+
+  <section id="sec-service">
+    <h2 class="section-title">2. 本サービスの内容</h2>
+    <p>本サービスは、ユーザーの入力情報等に基づき、適性傾向・学習方針・参考情報などを提示する診断サービスです。提示内容は学習・キャリア検討の参考情報であり、効果・成果・収益・就職・転職等を保証するものではありません。</p>
+    <p class="note">本サービスは医療・法律・投資などの専門的助言を提供するものではありません。必要に応じて専門家にご相談ください。</p>
+  </section>
+
+  <section id="sec-account">
+    <h2 class="section-title">3. 利用資格・アカウント</h2>
+    <ul>
+      <li>ユーザーは真実かつ最新の情報を提供し、必要に応じて更新するものとします。</li>
+      <li>アカウント・診断ID等の管理はユーザーの責任で行い、第三者の不正利用を防止してください。</li>
+      <li>不正・不適切な利用が判明した場合、当社は利用停止・削除等の措置を行うことができます。</li>
+    </ul>
+  </section>
+
+  <section id="sec-fees">
+    <h2 class="section-title">4. 料金・決済・返金</h2>
+    <ul>
+      <li>有料機能をご利用の場合、表示された条件・金額に従ってお支払いください。</li>
+      <li>決済完了後の返金は、法令で認められる場合または当社が別途定める場合を除き行いません。</li>
+      <li>決済事業者の規約・手数料・為替等は各事業者の条件に従います。</li>
+    </ul>
+  </section>
+
+  <section id="sec-results">
+    <h2 class="section-title">5. 診断結果の取扱い（非保証等）</h2>
+    <ul>
+      <li>診断結果・レポート・グラフ・スコア等は、推定・統計・アルゴリズム処理による参考情報です。</li>
+      <li>内容の正確性・完全性・有用性・適合性・最新性等を保証しません。利用は自己責任で行ってください。</li>
+      <li>表示や送信に伴う通信・端末・環境要因の影響により、体験・見え方が異なる場合があります。</li>
+    </ul>
+  </section>
+
+  <section id="sec-prohibited">
+    <h2 class="section-title">6. 禁止事項</h2>
+    <ul>
+      <li>法令・公序良俗に反する行為、犯罪行為またはその準備・助長。</li>
+      <li>当社・他ユーザー・第三者の権利（知的財産・プライバシー等）を侵害する行為。</li>
+      <li>不正アクセス、過度な負荷、脆弱性の悪用、リバースエンジニアリング等のセキュリティ侵害行為。</li>
+      <li>虚偽情報の送信、スパム、宣伝・勧誘目的の過剰な利用。</li>
+      <li>本サービスの運営を妨害する行為、当社が不適切と判断する行為。</li>
+    </ul>
+  </section>
+
+  <section id="sec-ip">
+    <h2 class="section-title">7. 知的財産権</h2>
+    <ul>
+      <li>本サービスに関するプログラム、デザイン、文書、画像、データ等の権利は当社又はライセンサーに帰属します。</li>
+      <li>ユーザーがアップロード・送信したコンテンツについて、当社は本サービス提供・改善・問い合わせ対応等の目的に必要な範囲で、無償・非独占的に利用（複製・翻案・解析等）できる権利を許諾いただきます。</li>
+      <li>ユーザーは、第三者の権利を侵害しないことを保証し、紛争が生じた場合は自己の責任と費用で解決するものとします。</li>
+    </ul>
+  </section>
+
+  <section id="sec-privacy">
+    <h2 class="section-title">8. 個人情報・データの取扱い</h2>
+    <p>個人情報、診断データ、ログ等の取扱いは、当社のプライバシーポリシーに従います。Cookie・解析ツール・メール配信等を含むデータ処理についても同様です。</p>
+    <p>詳細は<a href="/privacy.html" target="_blank" rel="noopener" style="color:var(--primary-blue);text-decoration:none;">プライバシーポリシー</a>をご確認ください。</p>
+  </section>
+
+  <section id="sec-3p">
+    <h2 class="section-title">9. 外部サービスの利用</h2>
+    <p>本サービスは、外部のクラウド、API、解析、メール配信等の第三者サービスを利用することがあります。各サービスの規約・ポリシーに従い、提供に必要な範囲でデータが送信・処理される場合があります。</p>
+  </section>
+
+  <section id="sec-changes">
+    <h2 class="section-title">10. 規約の変更</h2>
+    <p>当社は必要に応じて本規約を変更できます。変更後の規約は、本ページに掲載した時点または当社が定める施行日に効力を生じます。重要な変更は適切な方法で周知します。</p>
+  </section>
+
+  <section id="sec-suspension">
+    <h2 class="section-title">11. 提供の停止・終了</h2>
+    <p>当社は、保守、システム障害、災害、法令対応、事業上の判断等により、本サービスの全部又は一部の提供を中断・終了することがあります。</p>
+  </section>
+
+  <section id="sec-disclaimer">
+    <h2 class="section-title">12. 免責事項</h2>
+    <ul>
+      <li>当社は、本サービスの利用・不具合・中断・変更・終了等によりユーザーに生じた損失・不利益について、当社の故意・重過失がある場合を除き責任を負いません。</li>
+      <li>通信回線・端末・ブラウザ・OS等の環境に依存する事象や、外部サービスの仕様変更・障害等について当社は責任を負いません。</li>
+    </ul>
+  </section>
+
+  <section id="sec-liability">
+    <h2 class="section-title">13. 責任の限定</h2>
+    <p>当社が損害賠償責任を負う場合でも、当社に過失があるときに限り、かつ現実に発生した直接かつ通常の損害に限ります。賠償額は、ユーザーが当社に直近12ヶ月間に支払った対価の総額を上限とします（無料利用のみの場合は5,000円を上限）。</p>
+  </section>
+
+  <section id="sec-indemnity">
+    <h2 class="section-title">14. 保障（補償）</h2>
+    <p>ユーザーの本規約違反、第三者の権利侵害、法令違反等に起因して当社に損害・費用（合理的な弁護士費用を含む）が発生した場合、ユーザーは当社を補償するものとします。</p>
+  </section>
+
+  <section id="sec-law">
+    <h2 class="section-title">15. 準拠法・合意管轄</h2>
+    <p>本規約は日本法に準拠します。本サービス又は本規約に関連して生じる紛争については、当社の本店所在地を管轄する地方裁判所を第一審の専属的合意管轄とします。</p>
+  </section>
+
+  <section id="sec-contact">
+    <h2 class="section-title">16. お問い合わせ</h2>
+    <p>事業者名：BRIDGEHEARTS PARTNER - FZCO</p>
+    <p>所在地：DSO-IFZA Dubai Silicon Oasis Dubai - UAE 171456</p>
+    <p>メール：<span style="color:var(--primary-blue);text-decoration:none;">info[アットマーク]japan-maker.com</span></p>
+    <p class="meta">最終改定日：2025年11月12日</p>
+  </section>
+
+  <!-- 同意とCTA -->
+  <!--div class="card">
+    <div class="agree-wrap">
+      <input type="checkbox" id="agreeTerms" aria-describedby="agreeHelp">
+      <label for="agreeTerms">本規約に同意します</label>
+    </div>
+    <p id="agreeHelp" class="meta">チェックすると「同意して診断へ進む」ボタンが有効になります。</p>
+    <div class="cta-area">
+      <a id="goNext" href="/index.html#diagnosis" class="btn btn-primary" aria-disabled="true" tabindex="-1" disabled>同意して診断へ進む</a>
+      <a href="/index.html" class="btn btn-secondary">トップへ戻る</a>
+      <div class="back-to-top"><a href="#top">ページ先頭へ戻る</a></div>
+    </div>
+  </div-->
+</main>
+
+<footer class="footer">
+  <p>© Japan Maker</p>
+</footer>
+
+<script>
+  (function(){
+    const agree = document.getElementById('agreeTerms');
+    const go = document.getElementById('goNext');
+    function toggle(){
+      if(agree.checked){
+        go.removeAttribute('disabled');
+        go.setAttribute('aria-disabled','false');
+        go.removeAttribute('tabindex');
+      }else{
+        go.setAttribute('disabled','');
+        go.setAttribute('aria-disabled','true');
+        go.setAttribute('tabindex','-1');
+      }
+    }
+    agree && agree.addEventListener('change', toggle);
+    toggle();
+  })();
+</script>
+</body>
+</html>
